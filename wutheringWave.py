@@ -23,11 +23,11 @@ def postDataProcess(crit1Expectation):
     # csv = ''
     # csv += '2总1单,2总2单,2总3单,2总4单,3总1单,3总2单,3总3单,3总4单,4总1单,4总2单,4总3单,4总4单,5总1单,5总2单,5总3单,5总4单\n'
 
-    csv = '经验, 打孔/10, 胚子\n'
+    csv = '经验(万), 打孔器/10, 胚子(个)\n'
     for row in newData:
         for val in row:
-            csv += str(val) + ','
-        csv = csv[:len(csv) - 1]
+            csv += str(val) + ', '
+        csv = csv[:len(csv) - 2]
         csv += "\n"
     with open('wutheringwave.csv', 'w') as file:
         file.write(csv)
@@ -94,8 +94,9 @@ for idx, earlyDiscard in enumerate(earlyDiscards):
 
                 if 0 in echo[:checkLevel + 1] and 1 in echo[:checkLevel + 1]:
                     doubleCRIT = True
-                    expTotal += expAccu[4] - expAccu[checkLevel]
-                    holeTotal += 50 - (10 * (checkLevel + 1))
+                    # increase to level 25
+                    # expTotal += expAccu[4] - expAccu[checkLevel]
+                    # holeTotal += 50 - (10 * (checkLevel + 1))
                 else:
                     echo = np.random.choice(cards, size=5, replace=False, p=weights).tolist()
                     embryo += 1
