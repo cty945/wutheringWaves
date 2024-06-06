@@ -10,7 +10,7 @@ expDiff = [0.45, 1.2, 2.3, 4, 6.4]
 expAccu = [0.45, 1.65, 3.95, 7.95, 14.35]
 
 # targetAmount = 5
-targetAmount = 1000
+targetAmount = 10000
 
 crit1DiscardChecks = 4
 
